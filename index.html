@@ -49,16 +49,6 @@
       flex-direction: column;
     }
 
-    /* Nastro di cantiere in cima alla pagina */
-    .tape {
-      height: 10px;
-      background: repeating-linear-gradient(-45deg, var(--taupe) 0 14px, var(--navy-deep) 14px 28px);
-      background-size: 40px 10px;
-      animation: tape 1.6s linear infinite;
-      opacity: .9;
-    }
-    @keyframes tape { to { background-position: 40px 0; } }
-
     .page {
       flex: 1;
       width: 100%;
@@ -146,9 +136,10 @@
       width: 72%;
       background: repeating-linear-gradient(-45deg, var(--taupe) 0 8px, rgba(199, 179, 172, .45) 8px 16px);
       background-size: 22.6px 100%;
-      animation: fill 2.4s cubic-bezier(.2, .8, .2, 1) both, tape 1s linear infinite;
+      animation: fill 2.4s cubic-bezier(.2, .8, .2, 1) both, stripes 1s linear infinite;
     }
     @keyframes fill { from { width: 0; } }
+    @keyframes stripes { to { background-position: 22.6px 0; } }
 
     .contacts {
       display: grid;
@@ -252,8 +243,6 @@
   </style>
 </head>
 <body>
-  <div class="tape" aria-hidden="true"></div>
-
   <main class="page">
     <section class="content">
       <svg class="wordmark" viewBox="0 0 30.5 8.05" role="img" aria-labelledby="wm-title">
